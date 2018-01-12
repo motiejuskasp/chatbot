@@ -1,0 +1,13 @@
+<div *ngIf="phrase">
+
+  <h2>{{ phrase.line | uppercase }} Details</h2>
+  <div><span>id: </span>{{phrase.id}}</div>
+  <div>
+    <label>
+      <input [(ngModel)]="phrase.line" placeholder="line">
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+  
+</div>

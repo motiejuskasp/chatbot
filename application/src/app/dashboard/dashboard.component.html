@@ -1,0 +1,11 @@
+<h3>Top Phrases</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let phrase of phrases" class="col-1-4"
+    routerLink="/detail/{{phrase.id}}">
+    <div class="module phrase">
+      <h4>{{phrase.line}}</h4>
+    </div>
+  </a>
+</div>
+
+<app-phrase-search></app-phrase-search>

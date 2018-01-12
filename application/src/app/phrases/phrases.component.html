@@ -1,0 +1,27 @@
+<h2>Chatbot Phrases</h2>
+
+<div>
+  <label>
+    Phrase: <input #phraseLine />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(phraseLine.value); phraseLine.value=''">
+    add
+  </button>
+</div>
+
+<ul class="phrases">
+  <li *ngFor="let phrase of phrases">
+    <!-- [class.selected]="phrase === selectedPhrase"
+    (click)="onSelect(phrase)"> -->
+    <a routerLink="/detail/{{phrase.id}}">
+      <span class="badge">{{phrase.id}}</span> {{phrase.line}}
+    </a>
+    <button class="delete" title="delete phrase"
+      (click)="delete(phrase)">x</button>
+  </li>
+  
+</ul>
+    
+<!-- <app-phrase-detail [phrase]="selectedPhrase"></app-phrase-detail> -->
+
